@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiCallsService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   fetchTop200List(link: string) {
-    const params = new HttpParams()
-      .set('link', link);
+    const params = new HttpParams().set('link', link);
 
-    return this.http.get('localhost:3000/getlist', { params });
+    return this.http.get('https://crimson-irradiated-farm.glitch.me/getlist', {
+      params,
+    });
   }
-
 }

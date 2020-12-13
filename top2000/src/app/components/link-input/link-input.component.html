@@ -1,9 +1,15 @@
-<div class="container">
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Link</mat-label>
-    <input type="text" matInput [(ngModel)]="top2000Link.link" name="link">
-  </mat-form-field>
-  <button mat-button color="warn" (click)="fetchTop200List()">SnellieFit</button>
-</form>
+<div [ngClass]="{ 'container': !top2000Link.loading, 'loading': top2000Link.loading}" *ngIf=!top2000Response >
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Link</mat-label>
+      <input type="text" matInput [(ngModel)]="top2000Link.link" name="link">
+    </mat-form-field>
+    <button mat-button color="warn" (click)="fetchTop200List()">SnellieFit</button>
+  </form>
+</div>
+<div id="spinner">
+  <mat-spinner *ngIf="top2000Link.loading" ></mat-spinner>
+</div>
+<div class="test" *ngIf=top2000Response>
+
 </div>
