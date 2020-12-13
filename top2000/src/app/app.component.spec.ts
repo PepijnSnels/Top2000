@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Top2000-FE'`, () => {
+  it(`should have as title 'top2000'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Top2000-FE');
+    expect(app.title).toEqual('top2000');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Top2000-FE app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('top2000 app is running!');
   });
 });
