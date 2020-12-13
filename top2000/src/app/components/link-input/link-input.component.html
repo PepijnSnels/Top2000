@@ -1,3 +1,4 @@
+<body [ngClass]="{ 'body': !top2000Link.loading, 'body-loading': top2000Link.loading}">
 <div [ngClass]="{ 'container': !top2000Link.loading, 'loading': top2000Link.loading}" *ngIf=!top2000Response >
   <form class="example-form">
     <mat-form-field class="example-full-width">
@@ -10,6 +11,7 @@
 <div id="spinner">
   <mat-spinner *ngIf="top2000Link.loading" ></mat-spinner>
 </div>
-<div class="test" *ngIf=top2000Response>
-
+<div *ngIf=top2000Response>
+  <h1 class="covers" *ngFor="let item of top2000Response.artiestarray">{{item}}</h1>
 </div>
+</body>

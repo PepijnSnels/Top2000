@@ -7,6 +7,7 @@ import { ApiCallsService } from '../services/api-calls.service';
   templateUrl: './link-input.component.html',
   styleUrls: ['./link-input.component.scss'],
 })
+
 export class LinkInputComponent implements OnInit {
   top2000Link: Data = {
     link: undefined,
@@ -19,6 +20,9 @@ export class LinkInputComponent implements OnInit {
 
   ngOnInit(): void {
     this.top2000Link.loading = false
+    if(localStorage.getItem('mijnlijst') != null){
+      this.top2000Response = JSON.parse(localStorage.getItem('mijnlijst'))
+    }
   }
 
 
@@ -27,7 +31,7 @@ export class LinkInputComponent implements OnInit {
     this.top2000Link.loading = true
     this.http.fetchTop200List(this.top2000Link.link).subscribe(
       (response) => {
-        console.log(response);
+        localStorage.setItem('mijnlijst', JSON.stringify(response))
         this.top2000Response = response;
         this.top2000Link.loading = false
       },

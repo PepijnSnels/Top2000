@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ApiCallsService {
+
   constructor(private http: HttpClient) {}
 
   fetchTop200List(link: string) {
