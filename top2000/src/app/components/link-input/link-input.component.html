@@ -2,7 +2,8 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Link</mat-label>
-    <input type="text" matInput>
+    <input type="text" matInput [(ngModel)]="top2000Link.link" name="link">
   </mat-form-field>
+  <button mat-button color="warn" (click)="fetchTop200List()">SnellieFit</button>
 </form>
 </div>
