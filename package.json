@@ -12,7 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node ./src/bot.js",
+    "dev": "nodemon ./src/bot.js"
   },
   "author": "",
   "license": "ISC"
