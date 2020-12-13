@@ -6,16 +6,6 @@ const port = 3000;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
-app.set("view engine", "ejs");
-
-app.get("/", function (req, res) {
-  res.render("index.ejs");
-});
-
-app.post("/link", async function (req, res) {
-  let listarray = await comparelist(req.body.link);
-  res.render("link.ejs", { data: listarray });
-});
 
 app.get("/getlist", async (req, res) => {
   if (req.query.link) {
