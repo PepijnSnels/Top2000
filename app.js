@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const top2000lijst = require("./top2000.json");
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.port || 3000;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
